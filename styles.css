@@ -1,0 +1,76 @@
+main {
+    flex-grow: 1;
+}
+/*HEADER*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgb(89, 170, 100);
+}
+
+.nav-link{
+    font-family: "Montserrat", cursive, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(70, 163, 82);
+    font-size: 0.938em;
+}
+.nav-link:hover{
+    color: rgb(141, 184, 140);
+    text-decoration: underline;
+    }
+.nav-pills .nav-link.active{
+    background-color: rgb(4, 99, 20);
+    color: rgb(22, 212, 63); 
+    font-size: 0.938em;
+}
+.dropdown-menu .dropdown-item:hover {
+    background-color: #198754; /* Un tono de verde oscuro de Bootstrap (puedes ajustarlo) */
+    color: white; /* Opcional: cambia el color del texto para mejor contraste */
+}
+
+/* Para los enlaces en el navbar (Quienes somos?, Calendario, Las Ferias) */
+.nav-link.dropdown-toggle {
+    text-decoration: none !important;
+}
+/* Para los enlaces en el navbar */
+.nav-link.dropdown-toggle,
+.nav-item .nav-link {
+    text-decoration: none !important;
+}
+
+/*body*/
+body {
+  background-color: #caf1da; /* verde pastel */
+}
+
+/*FOOTER*/
+footer .nav-item-footer .nav-link {
+    font-family: "Montserrat", cursive, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 0.9em;
+    color: #555;
+    text-decoration: none;
+}
+
+
+footer .nav-item-footer .nav-link:hover {
+    color: #007bff; 
+    text-decoration: underline; 
+}
+
+
+footer p.text-center {
+    font-family: "Montserrat", cursive, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 0.8em;
+    color: #777; /
+}
+/* Para los enlaces en el footer (Quienes somos?, Calendario, Las Ferias) */
+footer .nav-link.dropdown-toggle {
+    text-decoration: none !important;
+}
+/* Para los enlaces en el footer */
+footer .nav-link.dropdown-toggle,
+footer .nav-item .nav-link {
+    text-decoration: none !important;
+}
+
