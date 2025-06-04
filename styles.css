@@ -1,8 +1,13 @@
-main {
-    flex-grow: 1;
+/* BODY */
+body {
+    background-color: #F4F1EE;
+    display: flex; /* Convierte el body en un contenedor flex */
+    flex-direction: column; /* Apila los elementos hijos (header, main, footer) verticalmente */
+    min-height: 100vh; /* Asegura que el body ocupe al menos el 100% de la altura de la ventana */
 }
-/*HEADER*/
-header{
+
+/* HEADER */
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,41 +15,71 @@ header{
     background-color: rgb(89, 170, 100);
 }
 
-.nav-link{
+.nav-link {
     font-family: "Montserrat", cursive, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: rgb(70, 163, 82);
     font-size: 0.938em;
 }
-.nav-link:hover{
+
+.nav-link:hover {
     color: rgb(141, 184, 140);
     text-decoration: underline;
-    }
-.nav-pills .nav-link.active{
-    background-color: rgb(4, 99, 20);
-    color: rgb(22, 212, 63); 
+}
+
+.nav-pills .nav-link.active {
+    background-color: #DDEEDF;
+    color: rgb(22, 212, 63);
     font-size: 0.938em;
 }
+
 .dropdown-menu .dropdown-item:hover {
-    background-color: #198754; /* Un tono de verde oscuro de Bootstrap (puedes ajustarlo) */
-    color: white; /* Opcional: cambia el color del texto para mejor contraste */
+    background-color: #4CAF50;
+    color: white;
 }
 
 /* Para los enlaces en el navbar (Quienes somos?, Calendario, Las Ferias) */
 .nav-link.dropdown-toggle {
     text-decoration: none !important;
 }
+
 /* Para los enlaces en el navbar */
 .nav-link.dropdown-toggle,
 .nav-item .nav-link {
     text-decoration: none !important;
 }
 
-/*body*/
-body {
-  background-color: #caf1da; /* verde pastel */
+/* MAIN */
+main {
+    flex-grow: 1; /* Permite que el main ocupe todo el espacio disponible empujando el footer hacia abajo */
 }
 
-/*FOOTER*/
+/* HOME (clase .nosotros aplicada al main) */
+.nosotros {
+    color: green; /* **CORREGIDO: Color del texto del main a verde** */
+    font-size: 1.1em;
+    /* line-height: 1.6; */ /* Para mejorar la legibilidad, puedes descomentar si lo necesitas */
+}
+/* ESTILOS PARA EL CARRUSEL */
+.carousel-responsive-width {
+    max-width: 800px; /* ancho máximo del carrusel */
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+
+@media (max-width: 768px) {
+    .carousel-responsive-width {
+        max-width: 90%; 
+    }
+}
+
+
+/* FOOTER */
+footer {
+    margin-top: auto; /* Empuja el footer hacia la parte inferior del contenedor flex (body) */
+    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+}
+
 footer .nav-item-footer .nav-link {
     font-family: "Montserrat", cursive, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 0.9em;
@@ -52,22 +87,22 @@ footer .nav-item-footer .nav-link {
     text-decoration: none;
 }
 
-
 footer .nav-item-footer .nav-link:hover {
-    color: #007bff; 
-    text-decoration: underline; 
+    color: #007bff;
+    text-decoration: underline;
 }
-
 
 footer p.text-center {
     font-family: "Montserrat", cursive, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 0.8em;
-    color: #777; /
+    color: #777;
 }
+
 /* Para los enlaces en el footer (Quienes somos?, Calendario, Las Ferias) */
 footer .nav-link.dropdown-toggle {
     text-decoration: none !important;
 }
+
 /* Para los enlaces en el footer */
 footer .nav-link.dropdown-toggle,
 footer .nav-item .nav-link {
