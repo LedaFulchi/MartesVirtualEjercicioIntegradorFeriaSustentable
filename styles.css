@@ -8,12 +8,44 @@ body {
 
 /* HEADER */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px 20px;
     background-color: rgb(89, 170, 100);
 }
+
+/* Ajustes para el navbar-brand para que logo y texto estén en línea */
+.navbar-brand {
+    display: flex; /* Convierte el navbar-brand en un contenedor flex */
+    align-items: center; /* Alinea el logo y el texto verticalmente */
+}
+
+/* Elimina los estilos específicos que centraban el texto del medio,
+   ya que ahora el texto está junto al logo a la izquierda */
+/* COMENTADO: .navbar .custom-navbar-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+} */
+
+/* COMENTADO: .custom-brand-center {
+    margin-left: auto;
+    margin-right: auto;
+    order: 2;
+    flex-grow: 1;
+    text-align: center;
+} */
+
+
+.navbar-toggler {
+    /* order: 3; No es necesario si se confía en el orden natural y justify-content */
+}
+
+/* Ajuste para el menú colapsable en móviles */
+.navbar-collapse {
+    /* order: 4; No es necesario si se confía en el orden natural y justify-content */
+    width: 100%; /* Ocupa todo el ancho disponible */
+}
+
 
 .nav-link {
     font-family: "Montserrat", cursive, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -48,6 +80,7 @@ header {
     text-decoration: none !important;
 }
 
+
 /* MAIN */
 main {
     flex-grow: 1; /* Permite que el main ocupe todo el espacio disponible empujando el footer hacia abajo */
@@ -55,24 +88,23 @@ main {
 
 /* HOME (clase .nosotros aplicada al main) */
 .nosotros {
-    color: green; /* **CORREGIDO: Color del texto del main a verde** */
+    color: green; /* Color del texto del main a verde */
     font-size: 1.1em;
     /* line-height: 1.6; */ /* Para mejorar la legibilidad, puedes descomentar si lo necesitas */
 }
+
 /* ESTILOS PARA EL CARRUSEL */
 .carousel-responsive-width {
     max-width: 800px; /* ancho máximo del carrusel */
-    margin-left: auto; 
-    margin-right: auto; 
+    margin-left: auto;
+    margin-right: auto;
 }
-
 
 @media (max-width: 768px) {
     .carousel-responsive-width {
-        max-width: 90%; 
+        max-width: 90%;
     }
 }
-
 
 /* FOOTER */
 footer {
@@ -108,4 +140,3 @@ footer .nav-link.dropdown-toggle,
 footer .nav-item .nav-link {
     text-decoration: none !important;
 }
-
