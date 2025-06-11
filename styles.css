@@ -35,10 +35,9 @@ header {
     text-align: center;
 } */
 
-
-.navbar-toggler {
-    /* order: 3; No es necesario si se confía en el orden natural y justify-content */
-}
+/*
+.navbar-toggler{ --order: 3; No es necesario si se confía en el orden natural y justify-content
+}*/
 
 /* Ajuste para el menú colapsable en móviles */
 .navbar-collapse {
@@ -87,10 +86,17 @@ main {
 }
 
 /* HOME (clase .nosotros aplicada al main) */
-.nosotros {
+.nosotros{
     color: green; /* Color del texto del main a verde */
     font-size: 1.1em;
-    /* line-height: 1.6; */ /* Para mejorar la legibilidad, puedes descomentar si lo necesitas */
+    font-style: italic;
+    line-height: 1.6; 
+}
+.nosotros-titulo{
+    color: green; /* Color del texto del main a verde */
+    font-size: 1.5em;
+    font-style: italic;
+    line-height: 1.6; 
 }
 
 /* ESTILOS PARA EL CARRUSEL */
@@ -105,6 +111,35 @@ main {
         max-width: 90%;
     }
 }
+
+/*QUE ES SER SUSTENTABLE */
+.sustentable{
+    color: green; /* Color del texto del main a verde */
+    font-size: 1.1em;
+    font-style: italic;
+    line-height: 1.6; 
+}
+
+.sustentable-titulo{
+    color: green; /* Color del texto del main a verde */
+    font-size: 1.5em;
+    font-style: italic;
+    line-height: 1.6; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* FOOTER */
 footer {
