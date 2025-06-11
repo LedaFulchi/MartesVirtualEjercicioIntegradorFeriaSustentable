@@ -60,9 +60,52 @@
         </nav>
     </header>
 
-<main>
-Formulario de contacto
-
+<main class="container py-5">
+    <h1 class="text-center mb-4 sustentable-titulo">Contacta con Nosotros</h1>
+    <p class="text-center sustentable mb-5">¿Tienes alguna pregunta sobre nuestras ferias sustentables? ¡Nos encantaría escucharte!</p>
+    
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card border-success shadow-sm">
+                <div class="card-body p-4">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label text-success">Nombre completo</label>
+                            <input type="text" class="form-control border-success" id="nombre" placeholder="Tu nombre" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="email" class="form-label text-success">Correo electrónico</label>
+                            <input type="email" class="form-control border-success" id="email" placeholder="tucorreo@ejemplo.com" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="asunto" class="form-label text-success">Asunto</label>
+                            <select class="form-select border-success" id="asunto" required>
+                                <option value="" selected disabled>Selecciona un asunto</option>
+                                <option value="consulta">Consulta general</option>
+                                <option value="feriante">Quiero ser feriante</option>
+                                <option value="productos">Información sobre productos</option>
+                                <option value="eventos">Información sobre eventos</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="mensaje" class="form-label text-success">Mensaje</label>
+                            <textarea class="form-control border-success" id="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                        </div>
+                        
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                Enviar mensaje
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
