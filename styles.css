@@ -1,9 +1,9 @@
 /* BODY */
 body {
     background-color: #F4F1EE;
-    display: flex; /* Convierte el body en un contenedor flex */
-    flex-direction: column; /* Apila los elementos hijos (header, main, footer) verticalmente */
-    min-height: 100vh; /* Asegura que el body ocupe al menos el 100% de la altura de la ventana */
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
 }
 
 /* HEADER */
@@ -14,8 +14,8 @@ header {
 
 /* Ajustes para el navbar-brand para que logo y texto estén en línea */
 .navbar-brand {
-    display: flex; /* Convierte el navbar-brand en un contenedor flex */
-    align-items: center; /* Alinea el logo y el texto verticalmente */
+    display: flex; 
+    align-items: center; 
 }
 
 /* Elimina los estilos específicos que centraban el texto del medio,
@@ -82,18 +82,18 @@ header {
 
 /* MAIN */
 main {
-    flex-grow: 1; /* Permite que el main ocupe todo el espacio disponible empujando el footer hacia abajo */
+    flex-grow: 1; 
 }
 
 /* HOME (clase .nosotros aplicada al main) */
 .nosotros{
-    color: green; /* Color del texto del main a verde */
+    color: green; 
     font-size: 1.1em;
     font-style: italic;
     line-height: 1.6; 
 }
 .nosotros-titulo{
-    color: green; /* Color del texto del main a verde */
+    color: green; 
     font-size: 1.5em;
     font-style: italic;
     line-height: 1.6; 
@@ -101,14 +101,48 @@ main {
 
 /* ESTILOS PARA EL CARRUSEL */
 .carousel-responsive-width {
-    max-width: 800px; /* ancho máximo del carrusel */
+    max-width: 800px; 
     margin-left: auto;
     margin-right: auto;
+}
+
+.carousel-item {
+    height: 400px; 
+    background-color: #F4F1EE; 
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+    object-position: center; 
+}
+
+.carousel-caption {
+    background-color: rgba(89, 170, 100, 0.7); 
+    padding: 15px;
+    border-radius: 8px;
+    bottom: 20px;
+}
+
+.carousel-caption h5 {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.carousel-caption p {
+    color: white;
+    margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
     .carousel-responsive-width {
         max-width: 90%;
+    }
+    
+    .carousel-item {
+        height: 300px; /* altura más pequeña para móviles */
     }
 }
 
