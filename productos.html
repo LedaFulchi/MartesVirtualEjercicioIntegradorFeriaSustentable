@@ -7,29 +7,25 @@
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" type="text/css">
     <title>Calendario - Productos</title>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </head>
 <body class="p-3 m-0 border-0 bd-example m-0 border-0">
-
-    <header>
+    
+<header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+            <div class="container-fluid"> <a class="navbar-brand" href="#">
                     <img src="Imagenes/logo.png" alt="Logo de Feria Sustentable" width="40" height="40" class="d-inline-block align-text-top me-2">
-                    Feria Sustentable
-                </a>
-
+                    <span class="fw-bold fs-5 text-success">Conciencia Verde</span> </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                     <ul class="navbar-nav nav-pills">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Quienes somos?</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="index.html">Nuestro Objetivo</a></li>
+                                <li><a class="dropdown-item" href="index.html" aria-current="page">Nuestro Objetivo</a></li>
                                 <li><a class="dropdown-item" href="queEsSerSustentable.html">Qué es ser sustentable</a></li>
                             </ul>
                         </li>
@@ -43,7 +39,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Las Ferias</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="productos.html" aria-current="page">Productos</a></li>
+                                <li><a class="dropdown-item" href="productos.html">Productos</a></li>
                                 <li><a class="dropdown-item" href="atracciones.html">Atracciones</a></li>
                                 <li><a class="dropdown-item" href="actividades.html">Actividades</a></li>
                             </ul>
@@ -60,33 +56,339 @@
         </nav>
     </header>
 
-<main>
-Los productos de nuestros feriantes
+<main class="container-fluid"> <h1 class="productos-titulo">Algunos de nuestros productos que podes encontrar!!</h1>
+    <div class="row justify-content-center"> <div class="col-md-2dot4 col-sm-6 mb-4"> <div class="productos">
+                <div class="product-image">
+                    <img src="" alt="Imagen de Cosmética natural y vegana"> </div>
+                <h2>Cosmética natural y vegana</h2>
+                <span>Descubrí el poder de lo simple. Nuestra línea de cosmética natural está elaborada con ingredientes nobles y libres de crueldad animal. Cuidamos tu piel y al planeta con cada fórmula.</span>
+                <button type="button" class="btn btn-success mt-3 show-products-btn" data-bs-toggle="modal" data-bs-target="#cosmeticaModal">
+                    Ver productos
+                </button>
+                <div class="modal fade" id="cosmeticaModal" tabindex="-1" aria-labelledby="cosmeticaModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="cosmeticaModalLabel">Productos de Cosmética natural y vegana</h5>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Jabones artesanales sin químicos</li>
+                                    <li>Desodorantes sólidos</li>
+                                    <li>Bálsamos labiales con ingredientes orgánicos</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="col-md-2dot4 col-sm-6 mb-4">
+            <div class="productos">
+                <div class="product-image">
+                    <img src="" alt="Imagen de Alimentos saludables y de comercio justo"> </div>
+                <h2>Alimentos saludables y de comercio justo</h2>
+                <span>Sabores que nutren el cuerpo y el alma. Elegí productos hechos con amor, sin aditivos, y provenientes de comunidades que respetan el trabajo justo y la biodiversidad.</span>
+                <button type="button" class="btn btn-success mt-3 show-products-btn" data-bs-toggle="modal" data-bs-target="#alimentosModal">
+                    Ver productos
+                </button>
+                <div class="modal fade" id="alimentosModal" tabindex="-1" aria-labelledby="alimentosModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="alimentosModalLabel">Productos de Alimentos saludables y de comercio justo</h5>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Mermeladas caseras sin conservantes</li>
+                                    <li>Snacks a granel (frutos secos, granola)</li>
+                                    <li>Café orgánico o té de hierbas locales</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="col-md-2dot4 col-sm-6 mb-4">
+            <div class="productos">
+                <div class="product-image">
+                    <img src="" alt="Imagen de Productos reutilizables"> </div>
+                <h2>Productos reutilizables</h2>
+                <span>Un pequeño gesto que cambia el mundo. Estos productos están pensados para acompañarte en un estilo de vida sin residuos. Prácticos, duraderos y con propósito.</span>
+                <button type="button" class="btn btn-success mt-3 show-products-btn" data-bs-toggle="modal" data-bs-target="#reutilizablesModal">
+                    Ver productos
+                </button>
+                <div class="modal fade" id="reutilizablesModal" tabindex="-1" aria-labelledby="reutilizablesModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="reutilizablesModalLabel">Productos reutilizables</h5>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Bolsas de tela o malla para compras</li>
+                                    <li>Botellas y termos de acero inoxidable</li>
+                                    <li>Servilletas y pañuelos de tela</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2dot4 col-sm-6 mb-4">
+            <div class="productos">
+                <div class="product-image">
+                    <img src="" alt="Imagen de Ropa y accesorios sustentables"> </div>
+                <h2>Ropa y accesorios sustentables</h2>
+                <span>La moda también puede ser responsable. Apostamos por prendas que cuentan historias: fibras naturales, procesos éticos y una estética que abraza la autenticidad.</span>
+                <button type="button" class="btn btn-success mt-3 show-products-btn" data-bs-toggle="modal" data-bs-target="#ropaModal">
+                    Ver productos
+                </button>
+                <div class="modal fade" id="ropaModal" tabindex="-1" aria-labelledby="ropaModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ropaModalLabel">Ropa y accesorios sustentables</h5>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Prendas hechas con algodón orgánico o fibras recicladas</li>
+                                    <li>Accesorios de moda upcycled (hechos con materiales reutilizados)</li>
+                                    <li>Calzado vegano o artesanal</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2dot4 col-sm-6 mb-4">
+            <div class="productos">
+                <div class="product-image">
+                    <img src="" alt="Imagen de Artículos para el hogar eco-friendly"> </div>
+                <h2>Artículos para el hogar eco-friendly</h2>
+                <span>Tu casa también puede ser un refugio verde. Elegí artículos que limpian sin contaminar, que iluminan sin desperdiciar, y que decoran respetando el entorno.</span>
+                <button type="button" class="btn btn-success mt-3 show-products-btn" data-bs-toggle="modal" data-bs-target="#hogarModal">
+                    Ver productos
+                </button>
+                <div class="modal fade" id="hogarModal" tabindex="-1" aria-labelledby="hogarModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="hogarModalLabel">Artículos para el hogar eco-friendly</h5>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Velas de cera vegetal</li>
+                                    <li>Limpiadores biodegradables</li>
+                                    <li>Composteras domésticas</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2dot4 col-sm-6 mb-4">
+            <div class="productos">
+                <div class="product-image">
+                    <img src="" alt="Imagen de Juguetes y productos para niños"> </div>
+                <h2>Juguetes y productos para niños</h2>
+                <span>Criar con conciencia. Te ofrecemos opciones didácticas y ecológicas para que el juego también siembre valores de respeto y cuidado por la Tierra.</span>
+                <button type="button" class="btn btn-success mt-3 show-products-btn" data-bs-toggle="modal" data-bs-target="#ninosModal">
+                    Ver productos
+                </button>
+                <div class="modal fade" id="ninosModal" tabindex="-1" aria-labelledby="ninosModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ninosModalLabel">Juguetes y productos para niños</h5>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Juguetes de madera certificada FSC</li>
+                                    <li>Libros infantiles sobre medioambiente</li>
+                                    <li>Composteras domésticas</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2dot4 col-sm-6 mb-4">
+            <div class="productos">
+                <div class="product-image">
+                    <img src="" alt="Imagen de Plantas y jardinería urbana"> </div>
+                <h2>Plantas y jardinería urbana</h2>
+                <span>Volvé a conectar con lo natural. Llevá vida a tu balcón o cocina con estos plantines y herramientas pensadas para cultivar más verde en lo cotidiano.</span>
+                <button type="button" class="btn btn-success mt-3 show-products-btn" data-bs-toggle="modal" data-bs-target="#plantasModal">
+                    Ver productos
+                </button>
+                <div class="modal fade" id="plantasModal" tabindex="-1" aria-labelledby="plantasModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="plantasModalLabel">Plantas y jardinería urbana</h5>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Plantines nativos o aromáticas</li>
+                                    <li>Macetas biodegradables o recicladas</li>
+                                    <li>Semillas orgánicas</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2dot4 col-sm-6 mb-4">
+            <div class="productos">
+                <div class="product-image">
+                    <img src="" alt="Imagen de Arte y decoración sustentable"> </div>
+                <h2>Arte y decoración sustentable</h2>
+                <span>Belleza con propósito. Obras únicas creadas a partir de materiales reciclados o reutilizados, que transforman residuos en inspiración.</span>
+                <button type="button" class="btn btn-success mt-3 show-products-btn" data-bs-toggle="modal" data-bs-target="#arteModal">
+                    Ver productos
+                </button>
+                <div class="modal fade" id="arteModal" tabindex="-1" aria-labelledby="arteModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="arteModalLabel">Arte y decoración sustentable</h5>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Cuadros hechos con materiales reciclados</li>
+                                    <li>Móviles o adornos de papel reutilizado</li>
+                                    <li>Cerámica artesanal</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+
+        <div class="col-md-2dot4 col-sm-6 mb-4">
+            <div class="productos">
+                <div class="product-image">
+                    <img src="" alt="Imagen de Tecnología verde"> </div>
+                <h2>Tecnología verde</h2>
+                <span>Innovación que cuida. Porque el futuro también necesita energía limpia, ofrecemos dispositivos y soluciones para vivir más conectado con menos impacto.</span>
+                <button type="button" class="btn btn-success mt-3 show-products-btn" data-bs-toggle="modal" data-bs-target="#tecnologiaModal">
+                    Ver productos
+                </button>
+                <div class="modal fade" id="tecnologiaModal" tabindex="-1" aria-labelledby="tecnologiaModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="tecnologiaModalLabel">Tecnología verde</h5>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Cargadores solares</li>
+                                    <li>Lámparas LED recargables</li>
+                                    <li>Kits de energía renovable para el hogar</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2dot4 col-sm-6 mb-4">
+            <div class="productos">
+                <div class="product-image">
+                    <img src="" alt="Imagen de Educación y conciencia"> </div>
+                <h2>Educación y conciencia</h2>
+                <span>Todo cambio comienza con el conocimiento. Acercate a libros, juegos y experiencias que invitan a reflexionar, compartir y construir un mundo más justo.</span>
+                <button type="button" class="btn btn-success mt-3 show-products-btn" data-bs-toggle="modal" data-bs-target="#educacionModal">
+                    Ver productos
+                </button>
+                <div class="modal fade" id="educacionModal" tabindex="-1" aria-labelledby="educacionModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="educacionModalLabel">Educación y conciencia</h5>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Libros sobre sostenibilidad</li>
+                                    <li>Talleres o kits DIY (hazlo tú mismo)</li>
+                                    <li>Juegos de mesa con temática ecológica</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </main>
+
 <footer class="py-3 my-4">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Quienes somos?</a>
             <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="nuestroObjetivo.html">Nuestro Objetivo</a></li>
-            <li><a class="dropdown-item" href="queEsSerSustentable.html">Qué es ser sustentable</a></li>
+                <li><a class="dropdown-item" href="index.html">Nuestro Objetivo</a></li>
+                <li><a class="dropdown-item" href="queEsSerSustentable.html">Qué es ser sustentable</a></li>
             </ul>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Calendario</a>
             <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="fechas.html" aria-current="page">Fechas</a></li>
-            <li><a class="dropdown-item" href="eventosEspeciales.html">Eventos Especiales</a></li>
+                <li><a class="dropdown-item" href="fechas.html">Fechas</a></li>
+                <li><a class="dropdown-item" href="eventosEspeciales.html">Eventos Especiales</a></li>
             </ul>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Las Ferias</a>
             <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="productos.html" aria-current="page">Productos</a></li>
-            <li><a class="dropdown-item" href="atracciones.html">Atracciones</a></li>
-            <li><a class="dropdown-item" href="actividades.html">Actividades</a></li>
+                <li><a class="dropdown-item" href="productos.html">Productos</a></li>
+                <li><a class="dropdown-item" href="atracciones.html">Atracciones</a></li>
+                <li><a class="dropdown-item" href="actividades.html">Actividades</a></li>
             </ul>
         </li>
         <li class="nav-item">
@@ -97,5 +399,6 @@ Los productos de nuestros feriantes
         </li></ul>
         <p class="text-center text-body-secondary">&copy; 2025. Todos los derechos reservados.</p>
 </footer>
+
 </body>
 </html>
