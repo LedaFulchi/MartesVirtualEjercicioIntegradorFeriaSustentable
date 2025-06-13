@@ -223,58 +223,53 @@ main {
     display: block;
 }
 
-/* Ocultar las listas de productos por defecto (estas están en el modal) */
-.productos ul {
+/* Estilos para las listas de productos */
+.product-list {
     display: none;
     list-style: none;
     padding: 0;
     margin-top: 15px;
     text-align: left;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid #e9ecef;
 }
 
-.productos ul li {
+.product-list.show {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.product-list li {
     color: #333;
-    margin-bottom: 5px;
-    font-size: 1em;
-}
-
-/* Estilos para el botón "Ver productos" */
-.productos .show-products-btn {
-    background-color: rgb(89, 170, 100);
-    border-color: rgb(89, 170, 100);
-    color: white;
-    font-weight: bold;
-    padding: 8px 15px; /* Reduje el padding del botón */
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 0.9em; /* Hice la fuente del botón más pequeña */
-}
-
-.productos .show-products-btn:hover {
-    background-color: rgb(70, 163, 82);
-    border-color: rgb(70, 163, 82);
-}
-
-/* Estilos para el modal */
-.modal-header {
-    background-color: rgb(89, 170, 100);
-    color: white;
-    border-bottom: 1px solid #dee2e6;
-}
-
-.modal-header .modal-title {
-    color: white;
-}
-
-.modal-header .btn-close {
-    filter: invert(1) grayscale(100%) brightness(200%);
-}
-
-.modal-body ul {
-    list-style: disc;
+    margin-bottom: 8px;
+    font-size: 0.95em;
     padding-left: 20px;
-    color: #333;
+    position: relative;
+}
+
+.product-list li:before {
+    content: "•";
+    color: #28a745;
+    position: absolute;
+    left: 0;
+}
+
+.product-list li:last-child {
+    margin-bottom: 0;
+}
+
+
+.show-products-btn.active {
+    background-color: #218838;
+}
+
+
+.modal-header,
+.modal-body,
+.modal-footer {
+    display: none;
 }
 
 /* FOOTER */
@@ -314,78 +309,117 @@ footer .nav-item .nav-link {
 /* Estilos para el Chatbox */
 #chatbox-container {
     position: fixed;
-    bottom: 20px; /* Distancia desde la parte inferior */
-    right: 20px; /* Distancia desde la parte derecha */
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 
 #chatbox-icon {
-    width: 60px; /* Tamaño del icono */
-    height: 60px;
-    background-color: #28a745; /* Color de fondo del icono (verde de Bootstrap) */
-    border-radius: 50%; /* Icono circular */
+    width: auto;
+    height: auto;
+    min-width: 80px;
+    padding: 8px 16px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+    transition: all 0.3s ease;
+    border: 2px solid #e0e0e0;
+    position: relative;
+    overflow: hidden;
+}
+
+#chatbox-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, #28a745, #20c997);
+    opacity: 0.1;
+    transition: opacity 0.3s ease;
 }
 
 #chatbox-icon:hover {
-    transform: scale(1.05); /* Efecto de crecimiento al pasar el mouse */
+    transform: scale(1.05);
+    box-shadow: 6px 6px 12px #d9d9d9, -6px -6px 12px #ffffff;
 }
 
-#chatbox-icon img {
-    width: 35px; /* Tamaño de la imagen dentro del icono */
-    height: 35px;
-    filter: invert(100%); /* Hace que la imagen sea blanca si es oscura */
+#chatbox-icon:hover::before {
+    opacity: 0.2;
+}
+
+#chatbox-icon span {
+    color: #28a745;
+    font-size: 14px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    text-shadow: 1px 1px 2px rgba(40, 167, 69, 0.1);
+    transition: all 0.3s ease;
+}
+
+#chatbox-icon:hover span {
+    color: #218838;
 }
 
 #chatbox-popup {
-    /* CAMBIO CLAVE AQUÍ: */
-    display: none; /* Oculto por defecto */ 
+    display: none;
     position: absolute;
-    bottom: 80px; /* Encima del icono */
+    bottom: 80px;
     right: 0;
-    width: 300px; /* Ancho de la ventana del chat */
-    height: 350px; /* Altura fija para el chatbox */
+    width: 320px;
+    height: 400px;
     background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     overflow: hidden;
-    animation: fadeIn 0.3s ease-out; /* Animación de aparición */
-    flex-direction: column; /* Apilar elementos verticalmente */
-    /* REMUEVE el 'display: flex;' de aquí, debe ir solo en .show */
+    animation: slideUp 0.3s ease-out;
+    flex-direction: column;
+    border: 1px solid #e9ecef;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #chatbox-popup.show {
-    /* Aquí es donde se define display: flex; para mostrarlo */
-    display: flex; /* Muestra la ventana con flexbox cuando tiene la clase 'show' */
+    display: flex;
 }
 
-/* El resto de tu CSS permanece igual */
 #chatbox-header {
-    background-color: #28a745; /* Encabezado verde */
+    background: linear-gradient(135deg, #28a745, #20c997);
     color: white;
-    padding: 10px 15px;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    flex-shrink: 0; /* Evita que el encabezado se encoja */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #chatbox-header h3 {
     margin: 0;
-    font-size: 1.1em;
+    font-size: 1.2em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#chatbox-header h3::before {
+    content: "🌱";
+    font-size: 1.2em;
 }
 
 #chatbox-close-btn {
@@ -396,73 +430,152 @@ footer .nav-item .nav-link {
     cursor: pointer;
     padding: 0;
     line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+#chatbox-close-btn:hover {
+    opacity: 1;
 }
 
 #chatbox-messages {
-    flex-grow: 1; /* Permite que esta sección ocupe el espacio disponible */
-    padding: 15px;
-    overflow-y: auto; /* Habilita el scroll si hay muchos mensajes */
-    background-color: #f9f9f9;
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .chat-message {
-    margin-bottom: 10px;
-    padding: 8px 12px;
-    border-radius: 15px;
-    max-width: 80%; /* Ancho máximo para los globos de mensaje */
+    max-width: 85%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 0.95em;
+    line-height: 1.4;
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .bot-message {
-    background-color: #e6ffe6; /* Fondo verde claro para mensajes del bot */
-    align-self: flex-start; /* Alinea el mensaje del bot a la izquierda */
-    border: 1px solid #c8e6c9;
-    color: #333;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .user-message {
-    background-color: #d1e7dd; /* Fondo verde suave para mensajes del usuario */
-    align-self: flex-end; /* Alinea el mensaje del usuario a la derecha */
-    margin-left: auto; /* Empuja el mensaje a la derecha */
-    border: 1px solid #b3d9c7;
-    text-align: right; /* Alinea el texto a la derecha */
-    color: #333;
+    background-color: #28a745;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.typing-indicator {
+    background-color: #e8f5e9;
+    padding: 8px 16px;
+    border-radius: 18px;
+    font-style: italic;
+    color: #666;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
 }
 
 #chatbox-input-area {
     display: flex;
-    padding: 10px 15px;
-    border-top: 1px solid #eee;
+    padding: 10px;
     background-color: #fff;
-    flex-shrink: 0; /* Evita que el área de entrada se encoja */
+    border-top: 1px solid #e9ecef;
+    gap: 8px;
+    align-items: center;
 }
 
 #chat-input {
-    flex-grow: 1; /* Permite que ocupe el espacio disponible */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 8px;
-    margin-right: 10px;
-    font-size: 0.9em;
+    flex-grow: 1;
+    border: 2px solid #e9ecef;
+    border-radius: 20px;
+    padding: 8px 12px;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    min-width: 0;
+    margin-right: 4px;
 }
 
 #chat-input:focus {
     outline: none;
     border-color: #28a745;
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
 }
 
 #chat-send-btn {
-    background-color: #28a745;
+    background: linear-gradient(145deg, #28a745, #20c997);
     color: white;
     border: none;
-    border-radius: 5px;
-    padding: 8px 15px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    padding: 0;
     cursor: pointer;
     font-size: 0.9em;
-    transition: background-color 0.2s ease;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 2px 2px 4px rgba(40, 167, 69, 0.2);
+    margin: 0;
+}
+
+#chat-send-btn::after {
+    content: "➤";
+    font-size: 0.85em;
+    transform: translateX(1px);
 }
 
 #chat-send-btn:hover {
-    background-color: #218838;
+    background: linear-gradient(145deg, #218838, #1ba87e);
+    transform: scale(1.05);
+    box-shadow: 3px 3px 6px rgba(40, 167, 69, 0.3);
+}
+
+#chat-send-btn:active {
+    transform: scale(0.95);
+    box-shadow: 1px 1px 2px rgba(40, 167, 69, 0.2);
+}
+
+/* Estilo para la barra de desplazamiento del chat */
+#chatbox-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chatbox-messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+#chatbox-messages::-webkit-scrollbar-thumb {
+    background: #28a745;
+    border-radius: 3px;
+}
+
+#chatbox-messages::-webkit-scrollbar-thumb:hover {
+    background: #218838;
 }
 
