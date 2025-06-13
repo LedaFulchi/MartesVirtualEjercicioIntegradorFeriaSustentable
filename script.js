@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-//para el chatbox
+// Chatbot mejorado
 document.addEventListener('DOMContentLoaded', function() {
     const chatboxIcon = document.getElementById('chatbox-icon');
     const chatboxPopup = document.getElementById('chatbox-popup');
@@ -50,6 +50,84 @@ document.addEventListener('DOMContentLoaded', function() {
     const chatInput = document.getElementById('chat-input');
     const chatSendBtn = document.getElementById('chat-send-btn');
     const chatMessages = document.getElementById('chatbox-messages');
+
+    // Base de conocimiento del chatbot
+    const chatbotResponses = {
+        saludos: {
+            patrones: ['hola', 'buenas', 'buenos dias', 'buenas tardes', 'buenas noches', 'como estas'],
+            respuestas: [
+                '¡Hola! Soy el asistente virtual de Conciencia Verde. ¿En qué puedo ayudarte hoy? 🌱',
+                '¡Bienvenido a Conciencia Verde! ¿Cómo puedo asistirte? 🌿',
+                '¡Hola! Estoy aquí para ayudarte con información sobre nuestra feria sustentable. ¿Qué te gustaría saber? 🌎'
+            ]
+        },
+        productos: {
+            patrones: ['productos', 'que venden', 'que ofrecen', 'que tienen', 'cosmetica', 'alimentos', 'ropa', 'juguetes', 'plantas', 'tecnologia'],
+            respuestas: [
+                'En nuestra feria encontrarás una gran variedad de productos sustentables: cosmética natural, alimentos orgánicos, ropa ecológica, juguetes educativos, plantas y más. ¿Hay alguna categoría específica que te interese? 🌱',
+                'Ofrecemos productos eco-friendly en diferentes categorías. ¿Te gustaría saber más sobre algún tipo específico de producto? 🌿',
+                'Tenemos desde cosmética natural hasta tecnología verde. ¿Qué tipo de productos sustentables te interesan? 🌎'
+            ]
+        },
+        feriante: {
+            patrones: ['ser feriante', 'vender', 'participar', 'unirme', 'feriante', 'vendedor', 'expositor'],
+            respuestas: [
+                '¡Nos encanta que quieras ser parte de nuestra comunidad! Para ser feriante necesitas productos sustentables y un compromiso con el medio ambiente. ¿Te gustaría que te cuente más sobre el proceso? 🌱',
+                'Ser feriante en Conciencia Verde es una gran oportunidad. ¿Quieres que te explique los requisitos y beneficios? 🌿',
+                '¡Excelente decisión! Para unirte como feriante, visita nuestra sección "Querés ser feriante?" o puedo contarte más detalles. ¿Qué te gustaría saber? 🌎'
+            ]
+        },
+        ubicacion: {
+            patrones: ['donde', 'ubicacion', 'direccion', 'lugar', 'dirección', 'ubicación', 'encontrar', 'buscar'],
+            respuestas: [
+                'Nuestra feria es itinerante y recorre diferentes puntos de la provincia. ¿Te gustaría saber las próximas fechas y ubicaciones? 🌱',
+                'Visitamos diferentes localidades durante el año. ¿En qué zona te gustaría encontrarnos? 🌿',
+                '¡Nos movemos por toda la provincia! ¿Quieres que te cuente sobre las próximas fechas en tu zona? 🌎'
+            ]
+        },
+        contacto: {
+            patrones: ['contacto', 'comunicar', 'hablar', 'llamar', 'escribir', 'mensaje', 'email', 'correo', 'telefono', 'teléfono'],
+            respuestas: [
+                'Puedes contactarnos a través de nuestro formulario en la sección "Contactanos" o por nuestras redes sociales. ¿Te gustaría que te pase los enlaces? 🌱',
+                '¡Estamos para ayudarte! Puedes escribirnos por el formulario de contacto o seguirnos en redes sociales. ¿Qué prefieres? 🌿',
+                'Tenemos varios canales de comunicación. ¿Te gustaría que te cuente las diferentes formas de contactarnos? 🌎'
+            ]
+        },
+        despedida: {
+            patrones: ['chau', 'adios', 'hasta luego', 'nos vemos', 'gracias', 'bye'],
+            respuestas: [
+                '¡Gracias por tu interés en Conciencia Verde! Esperamos verte pronto en alguna de nuestras ferias. ¡Que tengas un día sustentable! 🌱',
+                '¡Hasta pronto! Recuerda que cada pequeña acción cuenta para cuidar nuestro planeta. 🌿',
+                '¡Nos vemos! No olvides que juntos podemos hacer la diferencia. ¡Vuelve pronto! 🌎'
+            ]
+        },
+        default: {
+            respuestas: [
+                'Lo siento, no estoy seguro de entender. ¿Podrías reformular tu pregunta? Estoy aquí para ayudarte con información sobre nuestra feria sustentable. 🌱',
+                'No tengo esa información específica, pero puedo ayudarte con otros aspectos de nuestra feria. ¿Qué más te gustaría saber? 🌿',
+                'Interesante pregunta. ¿Te gustaría saber sobre nuestros productos, cómo ser feriante o las próximas fechas de la feria? 🌎'
+            ]
+        }
+    };
+
+    // Función para obtener una respuesta aleatoria
+    function getRandomResponse(responses) {
+        return responses[Math.floor(Math.random() * responses.length)];
+    }
+
+    // Función para encontrar la categoría de respuesta adecuada
+    function findResponseCategory(message) {
+        message = message.toLowerCase();
+        for (let category in chatbotResponses) {
+            if (category !== 'default') {
+                const patterns = chatbotResponses[category].patrones;
+                if (patterns.some(pattern => message.includes(pattern))) {
+                    return category;
+                }
+            }
+        }
+        return 'default';
+    }
 
     // Función para agregar un mensaje al chat
     function addMessage(message, sender) {
@@ -62,31 +140,48 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         messageElement.innerHTML = `<p>${message}</p>`;
         chatMessages.appendChild(messageElement);
-        // Desplazar hacia abajo para ver el último mensaje
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-    // Muestra/oculta el chatbox al hacer click en el icono
+    // Función para procesar el mensaje del usuario
+    function processUserMessage(message) {
+        const category = findResponseCategory(message);
+        const response = getRandomResponse(chatbotResponses[category].respuestas);
+        
+        // Simular "escribiendo..." antes de responder
+        const typingIndicator = document.createElement('div');
+        typingIndicator.classList.add('chat-message', 'bot-message', 'typing-indicator');
+        typingIndicator.innerHTML = '<p>Escribiendo...</p>';
+        chatMessages.appendChild(typingIndicator);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        // Eliminar el indicador y mostrar la respuesta después de un breve delay
+        setTimeout(() => {
+            chatMessages.removeChild(typingIndicator);
+            addMessage(response, 'bot');
+        }, 1000);
+    }
+
+    // Muestra/oculta el chatbox
     chatboxIcon.addEventListener('click', function() {
         chatboxPopup.classList.toggle('show');
         if (chatboxPopup.classList.contains('show')) {
-            // Desplazar hacia abajo al abrir para ver el mensaje inicial si es necesario
             chatMessages.scrollTop = chatMessages.scrollHeight;
-            chatInput.focus(); // Pone el foco en el input al abrir
+            chatInput.focus();
         }
     });
 
-    // Oculta el chatbox al hacer click en el botón de cerrar
+    // Cierra el chatbox
     chatboxCloseBtn.addEventListener('click', function() {
         chatboxPopup.classList.remove('show');
     });
 
-    // Envía el mensaje cuando se hace click en el botón "Enviar"
+    // Envía mensaje con el botón
     chatSendBtn.addEventListener('click', function() {
         sendMessage();
     });
 
-    // Envía el mensaje cuando se presiona Enter en el campo de texto
+    // Envía mensaje con Enter
     chatInput.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
             sendMessage();
@@ -94,16 +189,35 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function sendMessage() {
-        const messageText = chatInput.value.trim(); // .trim() elimina espacios en blanco al inicio/final
-
-        if (messageText !== '') { // Solo envía si el mensaje no está vacío
+        const messageText = chatInput.value.trim();
+        if (messageText !== '') {
             addMessage(messageText, 'user');
-            chatInput.value = ''; // Limpia el campo de entrada
-
-            // Simular una respuesta del bot (opcional, para demostrar)
-            setTimeout(() => {
-                addMessage("Gracias por tu mensaje. Un representante se pondrá en contacto pronto.", 'bot');
-            }, 1000); // Responde después de 1 segundo
+            chatInput.value = '';
+            processUserMessage(messageText);
         }
     }
+});
+
+// Manejo de la visualización de productos para la lista sin modals
+document.addEventListener('DOMContentLoaded', function() {
+    const showProductsButtons = document.querySelectorAll('.show-products-btn');
+    
+    showProductsButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const productList = this.nextElementSibling;
+            const isActive = this.classList.contains('active');
+            
+            // Toggle la clase active en el botón
+            this.classList.toggle('active');
+            
+            // Toggle la clase show en la lista
+            if (isActive) {
+                productList.classList.remove('show');
+                this.textContent = 'Ver productos';
+            } else {
+                productList.classList.add('show');
+                this.textContent = 'Ocultar productos';
+            }
+        });
+    });
 });
