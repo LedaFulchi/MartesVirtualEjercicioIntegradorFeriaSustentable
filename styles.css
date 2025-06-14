@@ -65,12 +65,14 @@ main {
 
 /* HOME (clase .nosotros aplicada al main) */
 .nosotros{
+    font-family: "Montserrat", cursive, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: green;
     font-size: 1.1em;
     font-style: italic;
     line-height: 1.6;
 }
 .nosotros-titulo{
+    font-family: "Montserrat", cursive, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: green;
     font-size: 1.5em;
     font-style: italic;
@@ -120,12 +122,13 @@ main {
     }
 
     .carousel-item {
-        height: 300px; /* altura más pequeña para móviles */
+        height: 300px; /* altura más pequeña para celulares */
     }
 }
 
 /*QUE ES SER SUSTENTABLE */
 .sustentable{
+    font-family: "Montserrat", cursive, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: green; /* Color del texto del main a verde */
     font-size: 1.1em;
     font-style: italic;
@@ -134,22 +137,22 @@ main {
 
 .sustentable-titulo{
     color: green; /* Color del texto del main a verde */
-    font-size: 1.5em;
+    font-size: 1.1em;
     font-style: italic;
-    line-height: 1.6;
+    line-height: 1.2;
 }
 
 /* ESTILOS PARA LA PÁGINA DE PRODUCTOS */
-.productos-titulo {
+.productos-titulo{
     color: rgb(70, 163, 82);
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     font-size: 2.2em;
     font-weight: bold;
 }
 
 /* Estilo para que los contenedores de productos sean más pequeños y se ajusten a 5 por fila */
-/* Bootstrap tiene 12 columnas. Para 5 por fila, 12 / 5 = 2.4. Necesitamos una clase personalizada. */
+/* Bootstrap tiene 12 columnas. Para 5 por fila, 12 / 5 = 2.4.  */
 .col-md-2dot4 {
     flex: 0 0 auto;
     width: 20%; /* 100% / 5 = 20% */
@@ -173,8 +176,7 @@ main {
     }
 }
 
-
-.productos { /* Eliminamos .container-fluid de aquí ya que ahora está envuelto en una columna */
+.productos {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -212,7 +214,7 @@ main {
     height: 120px; /* Altura fija para las imágenes */
     overflow: hidden;
     border-radius: 8px;
-    margin-bottom: 10px; /* Reduje el margen */
+    margin-bottom: 10px; /* Se redujo el margen */
 }
 
 .productos .product-image img {
@@ -272,6 +274,8 @@ main {
     display: none;
 }
 
+
+
 /* FOOTER */
 footer {
     margin-top: auto;
@@ -296,10 +300,10 @@ footer p.text-center {
     color: #777;
 }
 
-/* Para los enlaces en el footer (Quienes somos?, Calendario, Las Ferias) */
+/* Para los enlaces en el footer (Quienes somos?, Calendario, Las Ferias)
 footer .nav-link.dropdown-toggle {
     text-decoration: none !important;
-}
+} */
 
 /* Para los enlaces en el footer */
 footer .nav-link.dropdown-toggle,
@@ -579,3 +583,125 @@ footer .nav-item .nav-link {
     background: #218838;
 }
 
+
+/* ACTIVIDADES  y ATRACCIONES*/
+
+
+/* Línea divisoria debajo del título */
+.d-flex.justify-content-center.mb-4 .border-bottom {
+    border-color: #28a745 !important;     
+}
+
+/* Estilo para el contenedor principal de introducción */
+.card.border-success.shadow-sm {
+    border-color: #28a745 !important; 
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important; /* Sombra sutil */
+    transition: transform 0.3s ease-in-out; /* Transición para efecto hover */
+}
+
+.card.border-success.shadow-sm:hover {
+    transform: translateY(-5px); /* Pequeño levantamiento al pasar el mouse */
+}
+
+.card-body.p-4 {
+    padding: 1.5rem !important; /* Un poco más de padding */
+}
+
+/* Icono circular en la tarjeta de introducción */
+.bg-success.bg-opacity-10.rounded-circle {
+    background-color: rgba(40, 167, 69, 0.1) !important; /* Color de fondo con opacidad */
+    width: 90px; /* Tamaño fijo para el círculo */
+    height: 90px; /* Tamaño fijo para el círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50% !important; /* Asegura que sea un círculo perfecto */
+}
+
+.bg-success.bg-opacity-10.rounded-circle i {
+    color: #28a745 !important; /* Color del icono verde */
+    font-size: 3.5em !important; /* Tamaño del icono */
+}
+
+/* Títulos dentro de las tarjetas de actividad */
+.card-title.text-success {
+    color: #28a745 !important; /* Color del título verde */
+    font-size: 1.35em; /* Tamaño de fuente ligeramente más grande */
+    font-weight: 600; /* Semi-negrita */
+    font-family: "Montserrat", cursive, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Contenido de texto en las tarjetas */
+.card-text {
+    font-family: "Montserrat", cursive, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 1rem;
+    min-height: 4em; /* Asegura una altura mínima para el texto descriptivo */
+    display: -webkit-box;
+    webkit-line-clamp: 3; /* Limita a 3 líneas */
+    webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Iconos de lista dentro de las tarjetas de actividad */
+.list-unstyled li i {
+    color: #28a745 !important; /* Color de los iconos de lista verde */
+    margin-right: 0.5rem;
+}
+
+.list-unstyled li {
+    font-size: 0.9em;
+    font-family: "Montserrat", cursive, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #666;
+}
+
+/* Imágenes de las tarjetas de actividad */
+.card-img-top {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Ajustes responsivos para las tarjetas de actividad */
+@media (max-width: 767.98px) {
+    .col-md-6.col-lg-4 {
+        margin-bottom: 1.5rem; /* Espaciado entre tarjetas en pantallas pequeñas */
+    }
+}
+
+/* Estilo para el botón de contacto al final */
+.btn-success.btn-lg {
+    background-color: #28a745 !important; /* Color de fondo verde */
+    border-color: #28a745 !important; /* Color del borde verde */
+    font-weight: bold;
+    font-family: "Montserrat", cursive, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 0.8rem 2.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-success.btn-lg:hover {
+    background-color: #218838 !important; /* Verde más oscuro al pasar el mouse */
+    border-color: #1e7e34 !important;
+    transform: translateY(-2px); /* Pequeño levantamiento */
+}
+
+/* Ajustes generales para las cards dentro del main */
+main .card {
+    border-radius: 0.5rem; /* Bordes ligeramente más redondeados */
+}
+
+/* Contenedor de cada ítem de actividad para el círculo del icono */
+.card-body .d-flex.align-items-center.mb-3 .bg-success.bg-opacity-10.rounded-circle {
+    width: 40px; /* Tamaño más pequeño para los círculos de iconos en las tarjetas de actividad */
+    height: 40px;
+    min-width: 40px; /* Asegura que no se achique */
+}
+
+.card-body .d-flex.align-items-center.mb-3 .bg-success.bg-opacity-10.rounded-circle i {
+    font-size: 1.2em !important; /* Tamaño del icono dentro del círculo pequeño */
+}
