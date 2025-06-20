@@ -215,6 +215,204 @@
             </div>
         </div>
 
+        <!-- Calendario de Actividades -->
+        <div class="row justify-content-center mb-5 mt-5">
+            <div class="col-12">
+                <div class="card border-success shadow-sm">
+                    <div class="card-header bg-success bg-opacity-10 border-success">
+                        <button class="btn btn-link text-success text-decoration-none w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#calendarCollapse" aria-expanded="false" aria-controls="calendarCollapse">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h2 class="h4 mb-0">
+                                    <i class="fas fa-calendar-alt me-2"></i>Calendario de Actividades
+                                </h2>
+                                <i class="fas fa-chevron-down" id="calendarIcon"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="collapse" id="calendarCollapse">
+                        <div class="card-body p-4">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div id="calendar-container">
+                                        <div class="calendar-header d-flex justify-content-between align-items-center mb-3">
+                                            <button class="btn btn-outline-success" id="prevMonth">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </button>
+                                            <h4 id="currentMonth" class="text-success mb-0"></h4>
+                                            <button class="btn btn-outline-success" id="nextMonth">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                        <div id="calendar" class="calendar-grid"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="activity-legend">
+                                        <h5 class="text-success mb-3">Leyenda de Actividades</h5>
+                                        <div class="legend-item mb-2">
+                                            <span class="legend-color charlas"></span>
+                                            <span>Charlas Ambientales</span>
+                                        </div>
+                                        <div class="legend-item mb-2">
+                                            <span class="legend-color talleres"></span>
+                                            <span>Talleres de Reciclaje</span>
+                                        </div>
+                                        <div class="legend-item mb-2">
+                                            <span class="legend-color yoga"></span>
+                                            <span>Yoga Verde</span>
+                                        </div>
+                                        <div class="legend-item mb-2">
+                                            <span class="legend-color mercado"></span>
+                                            <span>Mercado Verde</span>
+                                        </div>
+                                        <div class="legend-item mb-2">
+                                            <span class="legend-color cine"></span>
+                                            <span>Cine Ambiental</span>
+                                        </div>
+                                        <div class="legend-item mb-2">
+                                            <span class="legend-color concierto"></span>
+                                            <span>Concierto Acústico</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Simulación de Costos de Talleres -->
+        <div class="row justify-content-center mb-5 mt-4">
+            <div class="col-12">
+                <div class="card border-success shadow-sm">
+                    <div class="card-header bg-success bg-opacity-10 border-success">
+                        <button class="btn btn-link text-success text-decoration-none w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#costSimulatorCollapse" aria-expanded="false" aria-controls="costSimulatorCollapse">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h2 class="h4 mb-0">
+                                    <i class="fas fa-calculator me-2"></i>Simulador de Costos de Talleres
+                                </h2>
+                                <i class="fas fa-chevron-down" id="costIcon"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="collapse" id="costSimulatorCollapse">
+                        <div class="card-body p-4">
+                            <p class="text-center mb-4">Calculá el costo de participar en nuestros talleres y actividades</p>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="cost-simulator">
+                                        <h5 class="text-success mb-3">Seleccioná tus actividades</h5>
+                                        
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="charlas-check" value="1500">
+                                            <label class="form-check-label" for="charlas-check">
+                                                Charlas Ambientales - $1.500
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="talleres-check" value="2500">
+                                            <label class="form-check-label" for="talleres-check">
+                                                Talleres de Reciclaje - $2.500
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="yoga-check" value="1800">
+                                            <label class="form-check-label" for="yoga-check">
+                                                Yoga Verde - $1.800
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="cocina-check" value="3000">
+                                            <label class="form-check-label" for="cocina-check">
+                                                Cocina Sustentable - $3.000
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="compostaje-check" value="2000">
+                                            <label class="form-check-label" for="compostaje-check">
+                                                Taller de Compostaje - $2.000
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="huerta-check" value="2200">
+                                            <label class="form-check-label" for="huerta-check">
+                                                Huerta Vertical - $2.200
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="energia-check" value="3500">
+                                            <label class="form-check-label" for="energia-check">
+                                                Energía Solar - $3.500
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="reciclaje-creativo-check" value="2800">
+                                            <label class="form-check-label" for="reciclaje-creativo-check">
+                                                Reciclaje Creativo - $2.800
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="cost-summary">
+                                        <h5 class="text-success mb-3">Resumen de Costos</h5>
+                                        
+                                        <div class="cost-breakdown mb-3">
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <span>Subtotal:</span>
+                                                <span id="subtotal">$0</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <span>Descuento por múltiples actividades (10%):</span>
+                                                <span id="discount">$0</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <span>Materiales incluidos:</span>
+                                                <span class="text-success">✓ Incluido</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <span>Certificados:</span>
+                                                <span class="text-success">✓ Incluido</span>
+                                            </div>
+                                            <hr>
+                                            <div class="d-flex justify-content-between fw-bold">
+                                                <span>Total:</span>
+                                                <span id="total" class="text-success">$0</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="cost-benefits">
+                                            <h6 class="text-success mb-2">Beneficios incluidos:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>Materiales de trabajo</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Certificado de participación</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Acceso a recursos digitales</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Comunidad de aprendizaje</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <button class="btn btn-success btn-lg w-100 mt-3" onclick="reservarActividades()">
+                                            <i class="fas fa-calendar-plus me-2"></i>Reservar Actividades
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Botón de contacto -->
         <div class="row justify-content-center mt-5">
             <div class="col-lg-8 text-center">
@@ -231,6 +429,165 @@
         </div>
     </div>
 </main>
+
+<script>
+// Calendario de actividades
+const actividades = [
+    { fecha: '2025-09-14', tipo: 'charlas', titulo: 'Charlas Ambientales' },
+    { fecha: '2025-09-14', tipo: 'talleres', titulo: 'Talleres de Reciclaje' },
+    { fecha: '2025-09-21', tipo: 'yoga', titulo: 'Yoga Verde' },
+    { fecha: '2025-09-21', tipo: 'mercado', titulo: 'Mercado Verde' },
+    { fecha: '2025-09-28', tipo: 'cine', titulo: 'Cine Ambiental' },
+    { fecha: '2025-10-05', tipo: 'concierto', titulo: 'Concierto Acústico' },
+    { fecha: '2025-10-12', tipo: 'charlas', titulo: 'Charlas Ambientales' },
+    { fecha: '2025-10-19', tipo: 'talleres', titulo: 'Talleres de Reciclaje' },
+    { fecha: '2025-10-26', tipo: 'yoga', titulo: 'Yoga Verde' },
+    { fecha: '2025-11-02', tipo: 'mercado', titulo: 'Mercado Verde' },
+    { fecha: '2025-11-09', tipo: 'cine', titulo: 'Cine Ambiental' },
+    { fecha: '2025-11-16', tipo: 'concierto', titulo: 'Concierto Acústico' }
+];
+
+let currentDate = new Date();
+let currentMonth = currentDate.getMonth();
+let currentYear = currentDate.getFullYear();
+
+function renderCalendar() {
+    const firstDay = new Date(currentYear, currentMonth, 1);
+    const lastDay = new Date(currentYear, currentMonth + 1, 0);
+    const startDate = new Date(firstDay);
+    startDate.setDate(startDate.getDate() - firstDay.getDay());
+
+    const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+                       'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+
+    document.getElementById('currentMonth').textContent = `${monthNames[currentMonth]} ${currentYear}`;
+
+    const calendar = document.getElementById('calendar');
+    calendar.innerHTML = '';
+
+    // Días de la semana
+    const daysOfWeek = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+    daysOfWeek.forEach(day => {
+        const dayHeader = document.createElement('div');
+        dayHeader.className = 'calendar-day-header';
+        dayHeader.textContent = day;
+        calendar.appendChild(dayHeader);
+    });
+
+    // Días del mes
+    for (let i = 0; i < 42; i++) {
+        const date = new Date(startDate);
+        date.setDate(startDate.getDate() + i);
+
+        const dayElement = document.createElement('div');
+        dayElement.className = 'calendar-day';
+
+        if (date.getMonth() === currentMonth) {
+            dayElement.textContent = date.getDate();
+            
+            // Verificar si hay actividades en esta fecha
+            const dateString = date.toISOString().split('T')[0];
+            const dayActivities = actividades.filter(act => act.fecha === dateString);
+            
+            if (dayActivities.length > 0) {
+                dayElement.classList.add('has-activity');
+                dayElement.classList.add(dayActivities[0].tipo);
+                dayElement.title = dayActivities.map(act => act.titulo).join(', ');
+            }
+        }
+
+        calendar.appendChild(dayElement);
+    }
+}
+
+document.getElementById('prevMonth').addEventListener('click', () => {
+    currentMonth--;
+    if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+    }
+    renderCalendar();
+});
+
+document.getElementById('nextMonth').addEventListener('click', () => {
+    currentMonth++;
+    if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+    }
+    renderCalendar();
+});
+
+// Simulador de costos
+function calcularCostos() {
+    const checkboxes = document.querySelectorAll('.form-check-input:checked');
+    let subtotal = 0;
+    
+    checkboxes.forEach(checkbox => {
+        subtotal += parseInt(checkbox.value);
+    });
+    
+    const discount = checkboxes.length > 1 ? subtotal * 0.1 : 0;
+    const total = subtotal - discount;
+    
+    document.getElementById('subtotal').textContent = `$${subtotal.toLocaleString()}`;
+    document.getElementById('discount').textContent = `$${discount.toLocaleString()}`;
+    document.getElementById('total').textContent = `$${total.toLocaleString()}`;
+}
+
+// Agregar event listeners a los checkboxes
+document.querySelectorAll('.form-check-input').forEach(checkbox => {
+    checkbox.addEventListener('change', calcularCostos);
+});
+
+function reservarActividades() {
+    const checkboxes = document.querySelectorAll('.form-check-input:checked');
+    if (checkboxes.length === 0) {
+        alert('Por favor seleccioná al menos una actividad para reservar.');
+        return;
+    }
+    
+    const actividadesSeleccionadas = Array.from(checkboxes).map(cb => cb.nextElementSibling.textContent);
+    const total = document.getElementById('total').textContent;
+    
+    alert(`¡Reserva exitosa!\n\nActividades seleccionadas:\n${actividadesSeleccionadas.join('\n')}\n\nTotal: ${total}\n\nTe contactaremos pronto para confirmar los detalles.`);
+}
+
+// Inicializar calendario
+renderCalendar();
+
+// Manejo de iconos de acordeón
+document.addEventListener('DOMContentLoaded', function() {
+    // Calendario
+    const calendarCollapse = document.getElementById('calendarCollapse');
+    const calendarIcon = document.getElementById('calendarIcon');
+    
+    calendarCollapse.addEventListener('show.bs.collapse', function() {
+        calendarIcon.style.transform = 'rotate(180deg)';
+        calendarIcon.style.transition = 'transform 0.3s ease';
+    });
+    
+    calendarCollapse.addEventListener('hide.bs.collapse', function() {
+        calendarIcon.style.transform = 'rotate(0deg)';
+        calendarIcon.style.transition = 'transform 0.3s ease';
+    });
+    
+    // Simulador de costos
+    const costSimulatorCollapse = document.getElementById('costSimulatorCollapse');
+    const costIcon = document.getElementById('costIcon');
+    
+    costSimulatorCollapse.addEventListener('show.bs.collapse', function() {
+        costIcon.style.transform = 'rotate(180deg)';
+        costIcon.style.transition = 'transform 0.3s ease';
+    });
+    
+    costSimulatorCollapse.addEventListener('hide.bs.collapse', function() {
+        costIcon.style.transform = 'rotate(0deg)';
+        costIcon.style.transition = 'transform 0.3s ease';
+    });
+});
+</script>
+
 <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
         <li class="nav-item dropdown">
